@@ -2,7 +2,6 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from pathlib import Path
 
 
 def main():
@@ -16,12 +15,6 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-
-    current_path = Path(__file__).parent.resolve()
-    sys.path.append(str(current_path / 'listen360'))
-
-    print(sys.path)
-
     execute_from_command_line(sys.argv)
 
 
